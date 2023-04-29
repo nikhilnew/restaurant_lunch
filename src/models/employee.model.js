@@ -8,38 +8,43 @@ var lunch = function (lunch_time) {
     this.mobile = lunch_time.mobile;
     this.department = lunch_time.department;
     this.description = lunch_time.description;
-this.current_time = new Date();
+    this.date = lunch_time.date;
+    this.time=lunch_time.time;
 };
 
 
 
-// lunch.create = function (newEmp, result) {    
+// lunch.create = function (newEmp, result) {
 //     dbConn.query("INSERT INTO lunch_time set ?", newEmp, function (err, res) {
-//         if(err) {
+//         if (err) {
 //             console.log("error: ", err);
 //             result(err, null);
 //         }
-//         else{
+//         else {
 //             console.log(res.insertId);
 //             result(null, res.insertId);
 //         }
-//     });           
+//     });
 // };
 
 
 
 lunch.create = function (newEmp, result) {
 
-    dbConn.query("Select * from lunch_time where emp_id=? and current_time=?",
+    dbConn.query("Select * from lunch_time where emp_id=? and date=?",
 
-        [newEmp.emp_id, newEmp.current_time], function (err, res) {
+// console.log(newEmp.emp_id, newEmp.date)
+   
+        [newEmp.emp_id, newEmp.date], function (err, res) {
 
             if (err || res.length > 0) {
+
 
                 console.log("error: ", err);
 
                 const msg = "already exist"
 
+                console.log(msg)
                 result(err, msg);
 
 
