@@ -3,7 +3,7 @@
 const lunch = require('../models/employee.model');
 
 exports.findAll = function (req, res) {
-    lunch.findAll(function (err, lunch) {
+    lunch.findAll(req.params.date,function (err, lunch) {
         console.log('controller')
         if (err)
             res.send(err);
