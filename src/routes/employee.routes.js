@@ -3,7 +3,7 @@ const router = express.Router()
 const employeeController = require('../controllers/employee.controller');
 
 // Retrieve all employees
-router.get('/:date', employeeController.findAll);
+router.get('/:applied_date', employeeController.findAll);
 
 // Create a new employee
 router.post('/add', employeeController.create);
