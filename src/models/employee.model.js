@@ -10,6 +10,7 @@ var lunch = function (lunch_time) {
     this.description = lunch_time.description;
     this.date = lunch_time.date;
     this.time=lunch_time.time;
+    this.applied_date=lunch_time.applied_date
 };
 
 
