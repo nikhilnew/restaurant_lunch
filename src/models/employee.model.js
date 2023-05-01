@@ -101,8 +101,8 @@ lunch.findById = function (emp_id, result) {
         }
     });
 };
-lunch.findAll = function (lunch_time,result) {
-    dbConn.query("Select * from lunch_time where applied_date = ?", lunch_time.applied_date , function (err, res) {
+lunch.findAll = function (applied_date,result) {
+    dbConn.query("Select * from lunch_time where applied_date = ?", applied_date , function (err, res) {
         if (err) {
             console.log("error: ", err);
             result(null, err);
