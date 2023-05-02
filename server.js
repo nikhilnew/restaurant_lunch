@@ -6,7 +6,12 @@ const app = express();
 
 // Setup server port
 const port = process.env.PORT || 5000;
+const cors = require('cors');
 
+
+app.use(cors({
+origin: 'https://cylsys-lunch-management.web.app'
+}));
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 
