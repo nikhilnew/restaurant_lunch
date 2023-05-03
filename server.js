@@ -10,15 +10,13 @@ const cors = require('cors');
 
 
 app.use(cors({
-origin: 'https://cylsys-lunch-management.web.app',
+origin: 'https://cylsys-lunch-management.web.app','https://6450f9a0ac35104e3ac3ef17--incomparable-pegasus-afe953.netlify.app'
 
 }));
 
 
-app.use(cors({
-origin: 'https://6450f9a0ac35104e3ac3ef17--incomparable-pegasus-afe953.netlify.app',
 
-}));
+
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 
